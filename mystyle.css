@@ -1,0 +1,101 @@
+@font-face { font-family: pstart; src: url('PressStart2P.ttf');}
+@font-face { font-family: sbitn; src: url('sbitn.ttf');}
+@font-face { font-family: halloweentoo; src: url('HalloweenToo.ttf');}
+.button-style {
+    background-color: blue;
+    width: 100px;
+    height: 60px;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.padding-bottom {
+    padding-bottom: 30px;
+}
+
+h1 {
+    font-size: 50px;
+    color: rgb(151, 166, 253);
+    font-family: Comic Sans MS;
+    text-align: center;
+}
+
+.textff {
+    color: rgb(151, 166, 253);
+    font-family: pstart;
+}
+
+.textpp {
+    color: rgb(151, 166, 253);
+    font-family: sbitn;
+    font-size: 40px;
+}
+
+.textffs {
+    color: rgb(151, 166, 253);
+    font-family: pstart;
+    font-size: 9px;
+}
+
+.textdd {
+    color: rgb(151, 166, 253);
+    font-family: halloweentoo;
+    font-size: 20px;
+}
+
+p {
+    font-size: 14px;
+    text-align: center;
+
+}
+
+body {
+    background-image: url('galaxyrepeat.jpg')
+}
+
+th, td {
+    padding: 3px;
+    text-align: center;
+}
+
+.floatleft {
+    float: left;
+}
+.floatright {
+    float: right;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+.header {
+    width: 600px;
+    height: 100px;
+    border: 1px solid orange;
+}
+
+.nav {
+    width: 125px;
+    height: 250px;
+    border: 1px solid green;
+}
+
+.sidebar {
+    width: 125px;
+    height: 250px;
+    border: 1px solid blue;
+}
+
+.main {
+    height: 350px;
+}
+
+.footer {
+    width: 600px;
+    height: 50px;
+    border: 1px solid red;
+}
