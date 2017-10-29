@@ -65,16 +65,12 @@
 
         opinapples = game.add.group();
         opinapples.enableBody = true;
-        for (var i = 0; i < 12; i++)
-        {
-            var opinapple = opinapples.create(i * 70, 0, 'opinapple');
-            opinapple.body.gravity.y = 50;
-            opinapple.body.bounce.y = 0.7 + Math.random() * 0.2;
-        }
-
+        
         scoreText = game.add.text(16, 16, 'score: 0', { 
         fontSize: '20px', fill: '#fff'});
-        
+            timer= game.time.create();
+            timer.start();
+            timer.loop(400,createopinapple);
     }
 
 var score = 0;
@@ -127,6 +123,13 @@ function collectStar (player, opinapple) {
     score += 10;
     scoreText.text = 'score: ' + score;
 }
+
+    function createopinapple(){
+        var value = Math.random() * 800;
+        var opinapple = opinapples.create( value, 0, 'opinapple');
+          opinapple.body.gravity.y = 50;
+          opinapple.body.bounce.y = 0.7 + Math.random() * 0.2;
+    }
 
 
 </script>
