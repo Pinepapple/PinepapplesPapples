@@ -19,8 +19,9 @@
     //Preload loads everything your game needs - sprites, images, etc
     function preload() {
         game.load.image('sky', 'assets/thisbesocool.jpeg');
-        game.load.image('ground', 'assets/grassyyplat.png');
-        game.load.spritesheet('hp', 'assets/hpsprite.png', 32, 48);
+        game.load.image('ground', 'assets/platform.png');
+        game.load.image('opinapple', 'assets/opinapple.png');
+        game.load.spritesheet('hp', 'assets/hpspritee.png', 32, 48);
 
     }
 
@@ -62,7 +63,22 @@
         //  Our controls.
         cursors = game.input.keyboard.createCursorKeys();
 
+        opinapples = game.add.group();
+        opinapples.enableBody = true;
+        for (var i = 0; i < 12; i++)
+        {
+            var opinapple = opinapples.create(i * 70, 0, 'opinapple');
+            opinapple.body.gravity.y = 900;
+            opinapple.body.bounce.y = 0.7 + Math.random() * 0.2;
+        }
+
+        scoreText = game.add.text(16, 16, 'score: 0', { 
+        fontSize: '20px', fill: '#fff'});
+        
     }
+
+var score = 0;
+var scoreText;
 
     //Update is continously called while the game is being played - add things like
     //tracking arrow keys, etc here!
@@ -98,10 +114,19 @@
 
             player.frame = 0;
         }
+        game.physics.arcade.collide(opinapples, platforms);
+        game.physics.arcade.overlap(player, opinapples, collectStar, null, this);
 
     }
 
-    //add any extra functions you need here! 
+    //add any extra functions you need here!
+
+function collectStar (player, opinapple) {
+    opinapple.kill();
+
+    score += 10;
+    scoreText.text = 'score: ' + score;
+}
 
 
 </script>
